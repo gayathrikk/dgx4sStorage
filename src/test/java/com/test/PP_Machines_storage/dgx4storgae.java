@@ -1,3 +1,4 @@
+
 package com.test.PP_Machines_storage;
 
 import java.io.InputStream;
@@ -35,7 +36,7 @@ public class dgx4storgae {
 	            session.connect();
 
 	            Channel channel = session.openChannel("exec");
-	            ((ChannelExec) channel).setCommand("df -h /mnt/local/nvmestorage");
+	            ((ChannelExec) channel).setCommand("ls -lh --time-style=long-iso /mnt/local/nvmestorage/postImageProcessor");
 	            channel.setInputStream(null);
 	            ((ChannelExec) channel).setErrStream(System.err);
 	            InputStream in = channel.getInputStream();
@@ -60,7 +61,7 @@ public class dgx4storgae {
 	            session.disconnect();
 
 	            String[] lines = output.toString().split("\n");
-	            System.out.println("Files in /mnt/local/nvmestorage:\n");
+	            System.out.println("Files in  /mnt/local/nvmestorage/postImageProcessor:\n");
 
 	            int todayFileCount = 0;
 	            int oldFileCount = 0;
@@ -106,11 +107,11 @@ public class dgx4storgae {
 	        }
 	    }  
 
-	    private void sendEmailAlert(String todayFiles, String oldFiles, int todayFileCount, int oldFileCount, String machineName) {
-	       String[] to = {"nathan.i@htic.iitm.ac.in"};
-    		String[] cc = {"venip@htic.iitm.ac.in", "nitheshkumarsundhar@gmail.com"};
+	   private void sendEmailAlert(String todayFiles, String oldFiles, int todayFileCount, int oldFileCount, String machineName) {
+	        String[] to = {"nathan.i@htic.iitm.ac.in"};
+        String[] cc = {"venip@htic.iitm.ac.in", "nitheshkumarsundhar@gmail.com", "meena@htic.iitm.ac.in", "gayathri@htic.iitm.ac.in"};
 
-    		 String[] bcc = {"divya.d@htic.iitm.ac.in"};
+        String[] bcc = {"divya.d@htic.iitm.ac.in"};
 
 	        String from = "automationsoftware25@gmail.com";
 	        String host = "smtp.gmail.com";
@@ -144,8 +145,7 @@ public class dgx4storgae {
 
 	            message.setSubject("ALERT: Old Files Found in " + machineName + " 📂");
 	            String content = "<p>This is an automated alert:</p>" +
-	                    "<p>The directory <b> /mnt/local/nvmestorage"
-	                    + "</b> on machine <b style='color:blue;'>" + machineName + "</b> contains old files.</p>" +
+	                    "<p>The directory <b> /mnt/local/nvmestorage/postImageProcessor</b> on machine <b style='color:blue;'>" + machineName + "</b> contains old files.</p>" +
 	                    "<p><b>" + oldFileCount + "</b> old files exist:</p>" +
 	                    "<pre>" + oldFiles + "</pre>" +
 	                    "<p>Please review and take necessary action.</p>" +
