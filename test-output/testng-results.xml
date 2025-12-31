@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-25T15:21:24 IST" name="Default suite" finished-at="2024-06-25T15:21:36 IST" duration-ms="12291">
+  <suite started-at="2025-12-31T17:14:31 IST" name="Default suite" finished-at="2025-12-31T17:14:48 IST" duration-ms="16110">
     <groups>
     </groups>
-    <test started-at="2024-06-25T15:21:24 IST" name="Default test" finished-at="2024-06-25T15:21:36 IST" duration-ms="12291">
-      <class name="com.test.PP_Machines_storage.Region_Count">
-        <test-method signature="testSSHConnection()[pri:0, instance:com.test.PP_Machines_storage.Region_Count@22ef9844]" started-at="2024-06-25T15:21:24 IST" name="testSSHConnection" finished-at="2024-06-25T15:21:36 IST" duration-ms="12257" status="PASS">
+    <test started-at="2025-12-31T17:14:31 IST" name="Default test" finished-at="2025-12-31T17:14:48 IST" duration-ms="16110">
+      <class name="com.test.PP_Machines_storage.dgx4storgae">
+        <test-method signature="testStorageDetails()[pri:0, instance:com.test.PP_Machines_storage.dgx4storgae@18d87d80]" started-at="2025-12-31T17:14:32 IST" name="testStorageDetails" finished-at="2025-12-31T17:14:48 IST" duration-ms="16066" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSSHConnection -->
-      </class> <!-- com.test.PP_Machines_storage.Region_Count -->
+        </test-method> <!-- testStorageDetails -->
+      </class> <!-- com.test.PP_Machines_storage.dgx4storgae -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
